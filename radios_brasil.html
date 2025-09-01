@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rádios do Brasil</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center p-6">
+  <h1 class="text-3xl font-bold mb-6">🎶 Rádios do Brasil</h1>
+
+  <!-- Lista de estados -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl">
+    <button onclick="showState('acre')" class="bg-green-600 text-white py-2 px-4 rounded-xl shadow hover:bg-green-700">Acre</button>
+    <button onclick="showState('alagoas')" class="bg-green-600 text-white py-2 px-4 rounded-xl shadow hover:bg-green-700">Alagoas</button>
+    <button onclick="showState('amapa')" class="bg-green-600 text-white py-2 px-4 rounded-xl shadow hover:bg-green-700">Amapá</button>
+    <button onclick="showState('amazonas')" class="bg-green-600 text-white py-2 px-4 rounded-xl shadow hover:bg-green-700">Amazonas</button>
+    <button onclick="showState('bahia')" class="bg-green-600 text-white py-2 px-4 rounded-xl shadow hover:bg-green-700">Bahia</button>
+    <button onclick="showState('ceara')" class="bg-green-600 text-white py-2 px-4 rounded-xl shadow hover:bg-green-700">Ceará</button>
+    <button onclick="showState('distrito_federal')" class="bg-green-600 text-white py-2 px-4 rounded-xl shadow hover:bg-green-700">Distrito Federal</button>
+    <button onclick="showState('espirito_santo')" class="bg-green-600 text-white py-2 px-4 rounded-xl shadow hover:bg-green-700">Espírito Santo</button>
+    <button onclick="showState('goias')" class="bg-green-600 text-white py-2 px-4 rounded-xl shadow hover:bg-green-700">Goiás</button>
+    <button onclick="showState('maranhao')" class="bg-green-600 text-white py-2 px-4 rounded-xl shadow hover:bg-green-700">Maranhão</button>
+    <button onclick="showState('mato_grosso')" class="bg-green-600 text-white py-2 px-4 rounded-xl shadow hover:bg-green-700">Mato Grosso</button>
+    <button onclick="showState('mato_grosso_do_sul')" class="bg-green-600 text-white py-2 px-4 rounded-xl shadow hover:bg-green-700">Mato Grosso do Sul</button>
+    <button onclick="showState('minas_gerais')" class="bg-green-600 text-white py-2 px-4 rounded-xl shadow hover:bg-green-700">Minas Gerais</button>
+    <button onclick="showState('para')" class="bg-green-600 text-white py-2 px-4 rounded-xl shadow hover:bg-green-700">Pará</button>
+    <button onclick="showState('paraiba')" class="bg-green-600 text-white py-2 px-4 rounded-xl shadow hover:bg-green-700">Paraíba</button>
+    <button onclick="showState('parana')" class="bg-green-600 text-white py-2 px-4 rounded-xl shadow hover:bg-green-700">Paraná</button>
+    <button onclick="showState('pernambuco')" class="bg-green-600 text-white py-2 px-4 rounded-xl shadow hover:bg-green-700">Pernambuco</button>
+    <button onclick="showState('piaui')" class="bg-green-600 text-white py-2 px-4 rounded-xl shadow hover:bg-green-700">Piauí</button>
+    <button onclick="showState('rio_de_janeiro')" class="bg-green-600 text-white py-2 px-4 rounded-xl shadow hover:bg-green-700">Rio de Janeiro</button>
+    <button onclick="showState('rio_grande_do_norte')" class="bg-green-600 text-white py-2 px-4 rounded-xl shadow hover:bg-green-700">Rio Grande do Norte</button>
+    <button onclick="showState('rio_grande_do_sul')" class="bg-green-600 text-white py-2 px-4 rounded-xl shadow hover:bg-green-700">Rio Grande do Sul</button>
+    <button onclick="showState('rondonia')" class="bg-green-600 text-white py-2 px-4 rounded-xl shadow hover:bg-green-700">Rondônia</button>
+    <button onclick="showState('roraima')" class="bg-green-600 text-white py-2 px-4 rounded-xl shadow hover:bg-green-700">Roraima</button>
+    <button onclick="showState('santa_catarina')" class="bg-green-600 text-white py-2 px-4 rounded-xl shadow hover:bg-green-700">Santa Catarina</button>
+    <button onclick="showState('sao_paulo')" class="bg-green-600 text-white py-2 px-4 rounded-xl shadow hover:bg-green-700">São Paulo</button>
+    <button onclick="showState('sergipe')" class="bg-green-600 text-white py-2 px-4 rounded-xl shadow hover:bg-green-700">Sergipe</button>
+    <button onclick="showState('tocantins')" class="bg-green-600 text-white py-2 px-4 rounded-xl shadow hover:bg-green-700">Tocantins</button>
+  </div>
+
+  <!-- Área de rádios -->
+  <div id="radios" class="w-full max-w-2xl mt-8"></div>
+
+  <script>
+    const states = {
+      "goias": [
+        { name: "Rádio Terra", url: "http://12.stmip.in:28376/;" },
+        { name: "Rádio Lance", url: "http://ssl1.transmissaodigital.com:8102/stream" },
+        { name: "Rádio Imaculada", url: "https://stm.alphanetdigital.com.br:9406/;" },
+        { name: "Rádio Vizinhança FM", url: "https://player.s01.com.br/proxy/7832" },
+        { name: "Rádio Mudernage", url: "https://stream-174.zeno.fm/2habryuzqa0uv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiIyaGFicnl1enFhMHV2IiwiaG9zdCI6InN0cmVhbS0xNzQuemVuby5mbSIsInJ0bGwiOjUsImp0aSI6IjJza05tUWpTVG5TQUR0VG1takljMkEiLCJpYXQiOjE3NTY2ODY2MzUsImV4cCI6MTc1NjY4NjY5NX0.3ZUr094WBawcq8EhDvXAFa4O4TVeXdX3Em1tEqRPTaY" }
+      ],
+      "acre": [],
+      "alagoas": [],
+      "amapa": [],
+      "amazonas": [],
+      "bahia": [],
+      "ceara": [],
+      "distrito_federal": [],
+      "espirito_santo": [],
+      "maranhao": [],
+      "mato_grosso": [],
+      "mato_grosso_do_sul": [],
+      "minas_gerais": [],
+      "para": [],
+      "paraiba": [],
+      "parana": [],
+      "pernambuco": [],
+      "piaui": [],
+      "rio_de_janeiro": [],
+      "rio_grande_do_norte": [],
+      "rio_grande_do_sul": [],
+      "rondonia": [],
+      "roraima": [],
+      "santa_catarina": [],
+      "sao_paulo": [],
+      "sergipe": [],
+      "tocantins": []
+    };
+
+    function showState(stateKey) {
+      const container = document.getElementById('radios');
+      container.innerHTML = ""; // limpa área
+
+      if (!states[stateKey] || states[stateKey].length === 0) {
+        container.innerHTML = `<p class='text-center text-gray-600'>Nenhuma rádio cadastrada ainda.</p>`;
+        return;
+      }
+
+      states[stateKey].forEach((radio, index) => {
+        const card = document.createElement('div');
+        card.className = "bg-white p-4 rounded-2xl shadow mb-4";
+
+        card.innerHTML = `
+          <h2 class="text-xl font-semibold mb-2">${radio.name}</h2>
+          <audio id="player-${stateKey}-${index}" src="${radio.url}" preload="none"></audio>
+
+          <div class="flex items-center gap-4">
+            <button onclick="togglePlay('${stateKey}', ${index})" id="btn-${stateKey}-${index}" class="bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700">▶️ Play</button>
+
+            <input type="range" min="0" max="1" step="0.01" value="1" onchange="setVolume('${stateKey}', ${index}, this.value)" class="w-40">
+
+            <button onclick="stopRadio('${stateKey}', ${index})" class="bg-red-600 text-white px-4 py-2 rounded-lg shadow hover:bg-red-700">⏹️ Stop</button>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    function togglePlay(stateKey, index) {
+      const player = document.getElementById(`player-${stateKey}-${index}`);
+      const btn = document.getElementById(`btn-${stateKey}-${index}`);
+      if (player.paused) {
+        player.play();
+        btn.innerText = "⏸️ Pause";
+      } else {
+        player.pause();
+        btn.innerText = "▶️ Play";
+      }
+    }
+
+    function setVolume(stateKey, index, value) {
+      const player = document.getElementById(`player-${stateKey}-${index}`);
+      player.volume = value;
+    }
+
+    function stopRadio(stateKey, index) {
+      const player = document.getElementById(`player-${stateKey}-${index}`);
+      player.pause();
+      player.currentTime = 0;
+      document.getElementById(`btn-${stateKey}-${index}`).innerText = "▶️ Play";
+    }
+  </script>
+</body>
+</html>
