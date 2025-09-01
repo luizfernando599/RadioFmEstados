@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +6,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 min-h-screen flex flex-col items-center p-6">
-  <h1 class="text-3xl font-bold mb-6">🎶 Rádios do Brasil</h1>
-
-  <!-- Lista de estados -->
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl">
+  <h1 class="text-3xl font-bold mb-6">🎶 Rádios do Brasil</h1>  <!-- Lista de estados -->  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl">
     <button onclick="showState('acre')" class="bg-green-600 text-white py-2 px-4 rounded-xl shadow hover:bg-green-700">Acre</button>
     <button onclick="showState('alagoas')" class="bg-green-600 text-white py-2 px-4 rounded-xl shadow hover:bg-green-700">Alagoas</button>
     <button onclick="showState('amapa')" class="bg-green-600 text-white py-2 px-4 rounded-xl shadow hover:bg-green-700">Amapá</button>
@@ -38,12 +34,7 @@
     <button onclick="showState('sao_paulo')" class="bg-green-600 text-white py-2 px-4 rounded-xl shadow hover:bg-green-700">São Paulo</button>
     <button onclick="showState('sergipe')" class="bg-green-600 text-white py-2 px-4 rounded-xl shadow hover:bg-green-700">Sergipe</button>
     <button onclick="showState('tocantins')" class="bg-green-600 text-white py-2 px-4 rounded-xl shadow hover:bg-green-700">Tocantins</button>
-  </div>
-
-  <!-- Área de rádios -->
-  <div id="radios" class="w-full max-w-2xl mt-8"></div>
-
-  <script>
+  </div>  <!-- Área de rádios -->  <div id="radios" class="w-full max-w-2xl mt-8"></div>  <script>
     const states = {
       "goias": [
         { name: "Rádio Terra", url: "http://12.stmip.in:28376/;" },
@@ -133,6 +124,5 @@
       player.currentTime = 0;
       document.getElementById(`btn-${stateKey}-${index}`).innerText = "▶️ Play";
     }
-  </script>
-</body>
+  </script></body>
 </html>
