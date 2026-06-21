@@ -12,7 +12,7 @@
 ||tags.crwdcntrl.net^
 ||redirector.googlevideo.com^
 ||connect.facebook.net^
-||firebase-settings.crashlystics.com^
+||firebase-settings.crashlytics.com^
 ||impact.com^
 ||zenaps.com^
 ||redirector.skimresources.com^
@@ -27,3 +27,9 @@
 ||cdn.privacy-mgmt.com^
 ||app.usercentrics.eu^
 ||cmp.osano.com^
+||cdn.taboola.com^
+||youtubei.googleapis.com^
+||graph.facebook.com^
+||graph.instagram.com^
+||i.instagram.com^
+||
